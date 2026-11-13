@@ -36,6 +36,16 @@ python rollup.py fixtures/sample_journal.jsonl
 
 `journal.py` writes three calls with a stub model, so the demo needs no key and no network. `rollup.py` reads a journal and prints cost, latency, and a breakdown.
 
+Or use the wrapper and the container:
+
+```sh
+./scripts/rollup.sh                          # the fixture
+./scripts/rollup.sh /path/to/journal.jsonl   # your own journal
+docker build -t llm-call-journal . && docker run --rm llm-call-journal
+```
+
+The image holds the fixture only. Mount a folder to score your own journal.
+
 Output on the fixture:
 
 ```text
